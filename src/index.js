@@ -1,6 +1,6 @@
 import './css/styles.css';
-import countryTpl from '../tamplates/country.hbs';
-import countryOne from '../tamplates/countryOne.hbs';
+import countryOne from '../tamplates/country.hbs';
+import countryTpl from '../tamplates/countryOne.hbs';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import { fetchCountries } from '../fetchCountries.js';
@@ -32,8 +32,8 @@ function onSearch(evt) {
 
 function onSuccses(name) {
   console.log('eto then')
-  const markupList = countryOne(name);
-  const markupOneCountries = countryTpl(name);
+  const markupList =countryTpl (name);
+  const markupOneCountries = countryOne(name);
   refs.countryList.innerHTML = markupList;
 
   if (name.length > 10) {
@@ -42,7 +42,7 @@ function onSuccses(name) {
   }
    else if (name.length >= 2 && name.length <= 10) {
 
-    refs.container.innerHTML = countryTpl;
+    refs.countryList.innerHTML = markupList;
   }
   else if (name.length === 1) {
    refs.container.innerHTML = markupOneCountries;
