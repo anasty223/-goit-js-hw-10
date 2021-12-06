@@ -3,7 +3,7 @@ import countryOne from '../tamplates/country.hbs';
 import countryTpl from '../tamplates/countryOne.hbs';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
-import { fetchCountries } from '../fetchCountries.js';
+import { fetchCountries } from './fetchCountries.js';
 
 
  const refs = {
@@ -37,19 +37,21 @@ function onSuccses(name) {
   refs.countryList.innerHTML = markupList;
 
   if (name.length > 10) {
-    return Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.')
+     refs.countryList.innerHTML = " ";
+    return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
 
   }
-   else if (name.length >= 2 && name.length <= 10) {
+//    else if (name.length >= 2 && name.length <= 10) {
 
-    refs.countryList.innerHTML = markupList;
-  }
+//  refs.countryList.innerHTML = " ";
+//    return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
+//   }
   else if (name.length === 1) {
    refs.container.innerHTML = markupOneCountries;
     refs.countryList.innerHTML = '';
    } 
 }
-function onError(error) {
+function onError( ) {
   Notiflix.Notify.failure('Oops, there is no country with that name')
   refs.container.innerHTML = '';
   
