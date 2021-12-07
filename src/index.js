@@ -15,20 +15,21 @@ import { fetchCountries } from './fetchCountries.js';
 const DEBOUNCE_DELAY = 300;
 refs.searchForm.addEventListener('input', debounce(onSearch, DEBOUNCE_DELAY))
 
+
+
 function onSearch(evt) {
   evt.preventDefault();
   const form = evt.target.value;
   const inputValue = form.trim();
-  
-   if (inputValue === '') {
+
+  if (inputValue === '') {
     refs.countryList.innerHTML = '';
     refs.container.innerHTML = '';
-     return;
-   }
-
- fetchCountries(inputValue).then(onSuccses).catch(onError);
-
+    return;
+  }
+  fetchCountries(inputValue).then(onSuccses).catch(onError);
 }
+
 
 function onSuccses(name) {
   console.log('eto then')
