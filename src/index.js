@@ -1,6 +1,6 @@
 import './css/styles.css';
-import countryOne from '../tamplates/country.hbs';
-import countryTpl from '../tamplates/countryOne.hbs';
+import countryOne from './tamplates/country.hbs';
+import countryTpl from './tamplates/countryOne.hbs';
 import debounce from 'lodash.debounce';
 import Notiflix from 'notiflix';
 import { fetchCountries } from './fetchCountries.js';
@@ -41,11 +41,11 @@ function onSuccses(name) {
     return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
 
   }
-//    else if (name.length >= 2 && name.length <= 10) {
-
-//  refs.countryList.innerHTML = " ";
-//    return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
-//   }
+   else if (name.length >= 2 && name.length <= 10) {
+//  refs.container.innerHTML = markupList;
+ 
+   return Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.')
+  }
   else if (name.length === 1) {
    refs.container.innerHTML = markupOneCountries;
     refs.countryList.innerHTML = '';
