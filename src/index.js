@@ -32,7 +32,7 @@ function onSearch(evt) {
 
 function onSuccses(name) {
   console.log('eto then')
-  const markupList =countryTpl (name);
+  const markupList =countryTpl(name);
   const markupOneCountries = countryOne(name);
   refs.countryList.innerHTML = markupList;
 
@@ -51,7 +51,7 @@ function onSuccses(name) {
     refs.countryList.innerHTML = '';
    } 
 }
-function onError( ) {
+function onError() {
   Notiflix.Notify.failure('Oops, there is no country with that name')
   refs.container.innerHTML = '';
   
