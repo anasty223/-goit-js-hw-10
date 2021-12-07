@@ -42,7 +42,7 @@
 //  export function fetchCountries(name) {
 //   // const url = `https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`;
 
-//     return fetch(`https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`)
+//     return fetch(`https://restcountries.com/v3.1/name/${name}?fields=languages,capital,population,flags,name`)
 //       .then(data => {
 //             if (data.status === 404) {
 //             throw new Error(data.status)
@@ -52,5 +52,18 @@
 //     })
      
 //   }
+ export function fetchCountries(name) {
+  // const url = `https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`;
+
+    return fetch(`https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`)
+      .then(data => {
+            if (data.status === 404) {
+            throw new Error(data.status)
+            } else {
+                return data.json()
+        }
+    })
+     
+  }
 
 
