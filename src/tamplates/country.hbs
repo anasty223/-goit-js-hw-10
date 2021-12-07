@@ -1,6 +1,7 @@
+
 {{#each this}}
-<li class="name-coutry"> <img src="{{flags.png}}" alt="" width="60" class="contry-img"> <b
-        class="contry-name">{{name.official}}</b></li>
+<li class="name-coutry"> <img src="{{flags.png}}" alt="flags" width="60" class="contry-img">
+ <b class="contry-name">{{name}}</b></li>
 <p> <b>Capital:</b> {{capital}}</p>
 <p> <b>Population:</b> {{population}}</p>
 <p> <b>Languages:</b>
@@ -9,11 +10,3 @@
     {{/each}}
 </p>
 {{/each}}
-
-{{!-- {{#each this}}
-<li > <img src="{{flags.png}}" alt="" width="60" >
- <b>{{name.official}}</b></li>
-<p> <b>Capital:</b> {{capital}}</p>
-<p> <b>Population:</b> {{population}}</p>
-<p> <b>Languages:</b>{{languages}}</p>
-{{/each}} --}}
