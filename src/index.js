@@ -38,13 +38,14 @@ function onSuccses(name) {
   refs.countryList.innerHTML = markupList;
 
   if (name.length > 10) {
+    refs.container.innerHTML = " ";
      refs.countryList.innerHTML = " ";
     return Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
 
   }
    else if (name.length >= 2 && name.length <= 10) {
 //  refs.container.innerHTML = markupList;
- 
+ refs.container.innerHTML = " ";
    return Notiflix.Notify.warning('Too many matches found. Please enter a more specific name.')
   }
   else if (name.length === 1) {
